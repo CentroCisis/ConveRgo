@@ -1,0 +1,91 @@
+# This repository adheres to the publiccode.yml standard by including this 
+# metadata file that makes public software easily discoverable.
+# More info at https://github.com/italia/publiccode.yml
+
+publiccodeYmlVersion: '0.2'
+releaseDate: '2024-01-17'
+developmentStatus: development
+softwareType: standalone/mobile
+platforms:
+  - web
+  - windows
+name: ConveRgo - Conversioni di coordinate per le Regioni
+url: 'https://github.com/CentroCisis/ConveRgo'
+maintenance:
+  type: internal
+legal:
+  license: AGPL-3.0-only
+localisation:
+  localisationReady: false
+description:
+  it:
+    genericName: Conversioni di coordinate
+    shortDescription: |-
+      ConveRgo esegue trasformazioni di coordinate fra i vari sistemi dei dati
+      geografici delle Amministrazioni regionali
+    longDescription: |
+      [**ConveRgo**](https://www.cisis.it/?page_id=3214) serve ad eseguire
+      trasformazioni di coordinate fra i vari sistemi di riferimento in cui sono
+      espressi i dati geografici delle Amministrazioni regionali (ROMA40, ED50,
+      ETRS89 nelle due realizzazioni ETRF89 e ETRF2000), considerando anche i
+      rispettivi sistemi cartografici (Gauss-Boaga, UTM-ED50, UTM-ETRF89 e
+      UTM-ETRF2000). Viene considerata anche la componente altimetrica, per le
+      conversioni fra quote ellissoidiche e geoidiche. Le funzioni permettono la
+      trasformazione di coordinate fra i vari sistemi (ETRF2000, ETRF89, ED50 e
+      ROMA40) mediante l’utilizzo dei “grigliati” IGM (sia quelli “nazionali”
+      \*.gr1-2 e \*.gk1-2 sia quelli frutto di adattamento locale del geoide,
+      denominati \*.gra).
+
+
+      Il programma, disponibile per il download in [**formato
+      .exe**](https://www.cisis.it/wp-content/uploads/2020/03/Setup_ConveRgo_ge.exe_.zip)
+      dal sito del [**CISIS - Centro Interregionale per I Sistemi Informatici
+      Geografici e Statistici**](https://www.cisis.it/?page_id=3214), permette
+      il passaggio di coordinate fra i sistemi ETRS89 (nelle realizzazioni
+      ETRF89 e ETRF2000), ED50 e ROMA40, con le relative rappresentazioni UTM e
+      Gauss-Boaga, elaborando singoli punti oppure file con liste di coordinate,
+      file di georeferenziazione (es. tfw), shapefile, dxf (di solo contenuto
+      cartografico) e altri formati. I calcoli possono essere eseguiti sulla
+      base dei "grigliati" nazionali, forniti dall'Istituto geografico militare
+      (IGM): il programma richiede l'indicazione della cartella che contiene i
+      file \*.GRn o \*.GKn (con n = 1 oppure 2), quindi carica automaticamente
+      tutti quelli presenti. Viene considerata anche la componente altimetrica,
+      con le opportune trasformazioni fra quote ellissoidiche e geoidiche. Il
+      programma non contiene al proprio interno alcun valore dei grigliati: il
+      reperimento dei relativi file compete all’utente. Nel caso in cui non
+      siano presenti i grigliati nell’area relativa ai file da trasformare,
+      ConveRgo permette di eseguire il calcolo col modello approssimato
+      (modalità “CartLab2”).
+
+
+      E’ possibile trasformare le coordinate Cassini-Soldner dei sistemi
+      catastali (Bessel su Genova) per le zone di cui si conosca il centro di
+      emanazione. Il programma contiene i centri delle zone più estese, che
+      rappresentano circa il 50% del territorio nazionale.
+
+
+      I **codici sorgenti pubblicati**, per le funzioni di calcolo e di gestione
+      dei "grigliati", costituiscono la parte principale del software,
+      consentendo di eseguire le conversioni di coordinate fra i vari sistemi di
+      riferimento nazionali secondo le modalità ufficiali prescritte
+      dall'allegato tecnico del D.M. del novembre 2011 "Adozione del Sistema di
+      riferimento geodetico nazionale".
+
+
+      I codici sorgenti sono espressi nel **linguaggio C++ **e corredati da
+      commenti e note esplicative di supporto all'eventuale riutilizzo da parte
+      di altri soggetti. Tramite i sorgenti, gli sviluppatori possono
+      implementare le conversioni di coordinate semplicemente integrando le
+      funzioni di calcolo e di gestione dei "grigliati" all'interno del proprio
+      software.
+
+
+      Si precisa che i sorgenti contengono solo le funzioni di lettura dei file
+      dei grigliati, ma non contengono i valori numerici dei modelli. Tali
+      valori, strutturati per un utilizzo razionale all'interno di un software
+      orientato alle conversioni di coordinate a livello nazionale (quindi
+      riuniti in un'unica struttura anziché suddivisi in molteplici file),
+      possono circolare solo all'interno delle Regioni o degli Enti subordinati,
+      sulla base di uno specifico accordo fra CISIS e IGM.
+categories:
+  - geographic-information-systems
